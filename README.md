@@ -9,7 +9,7 @@ This game consist in the traditional game called "Simon Says". I built follow Pl
 
 Also you can play this game in your mobile just opening the link on it.
 
-#Enjoy it!
+# Enjoy it!
 
 Imagenes, colores y sonido:
 https://github.com/pablojorgeandres/simonSays/blob/master/index.html
