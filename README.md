@@ -1,10 +1,16 @@
 # Memory Game
 
 This game consist in the traditional game called "Simon Says". I built follow Platzi course that help me to understand the **Fundamentals of Javascript**:
+- Variables
+- Conditions
+- Objects
 - Class
 - Arrays
+- Loops
 - Promises
-- Async Functions
+- Functions
+- Async 
+- OOP (Objet-Oriented Programming)
 - and go on...
 
 Also you can play this game in your mobile just opening the link on it.
