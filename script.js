@@ -15,7 +15,8 @@ class Juego {
   inicializar(){
     this.nextLevel = this.nextLevel.bind(this)
     this.elegirColor = this.elegirColor.bind(this)
-    btnEmpezar.classList.add('hide')
+    // btnEmpezar.classList.add('hide')
+    btnEmpezar.classList.toggle('hide') // Así para que agrege o quite la clase según el estado
     this.level = 1
     this.colores = {
       green,
@@ -103,6 +104,7 @@ class Juego {
         this.eliminarEventosClick()
         if(this.level == (LAST_LEVEL+1)) {
           // Ganó
+          this.youWon()
         } else {
             // setTimeout(this.nextLevel.bind(this), 2000)
             setTimeout(this.nextLevel, 1500)
@@ -110,7 +112,21 @@ class Juego {
       }
     } else {
       // Perdió
+      this.youLost()
     }
+  }
+
+  youWon() {
+    swal('Simon Says', 'CONGRATULATIONS, You Won!', 'success')
+      .then(this.inicializar.bind(this))
+  }
+
+  youLost() {
+    swal('Simon Says', 'PAY ATTENTION!!!, You Lost the Game', 'error')
+      .then(() => {
+        this.eliminarEventosClick()
+        this.inicializar()
+      })
   }
 
 }
