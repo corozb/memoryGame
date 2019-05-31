@@ -1,0 +1,1 @@
+Después de seleccionar el indice correspondiente al color según brightSequence(), le agregamos la clase light para que cambie el color y parezca iluminado y tambien le agregamos el tiempo que se iluminará con setTimeout con la función turnOffColor que elimina la clase light

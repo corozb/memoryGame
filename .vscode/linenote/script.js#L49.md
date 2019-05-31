@@ -1,0 +1,1 @@
+Lo multiplicamos por i porque es cada segundo por 1 * 2 * 3 y así sucesivamente

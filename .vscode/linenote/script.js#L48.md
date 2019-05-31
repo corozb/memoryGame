@@ -1,0 +1,1 @@
+Tranforma el número del array secuencia en un color según la función changeNumberToColor()

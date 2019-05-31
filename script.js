@@ -8,11 +8,12 @@ class Juego {
   constructor() {
     this.inicializar()
     this.generarSecuencia()
+    this.nextLevel()
   }
 
   inicializar(){
     btnEmpezar.classList.add('hide')
-    this.level = 1
+    this.level = 8
     this.colores = {
       green,
       red,
@@ -22,15 +23,40 @@ class Juego {
   }
 
   generarSecuencia() {
-  // Creamos un nuevo array con 10 valores, inicialmente serán todos ceros (.fill(0))
-  // con .map la modificamos y ponemos numeros aleatorios entre 1 y 4 (Math.random()*4), 
-  // Math.random() da número aleatorios en 0-1 y al multiplicar da cercanos a cuatro.
-  // y para que no dé enteros (0- 3) lo redondeamos hacia abajo con Math.floor:
-  // 0 = green
-  // 1 = red
-  // 2 = yellow
-  // 3 = blue
     this.secuencia = new Array(10).fill(0).map(n => Math.floor(Math.random()*4))
+  }
+
+  nextLevel(){
+    this.brightSequence()
+  }
+
+  changeNumberToColor(number) {
+    switch (number) {
+      case 0:
+        return 'green'
+      case 1:
+        return 'red'
+      case 2:
+        return 'yellow'
+      case 3:
+        return 'blue'
+      }
+    }
+
+  brightSequence() {
+    for (let i = 0; i < this.level; i++){
+      const color = this.changeNumberToColor(this.secuencia[i])
+      setTimeout(() => this.turnOnColor(color), 1000 * i)
+    }
+  }
+
+  turnOnColor(color){
+      this.colores[color].classList.add('light')
+      setTimeout(() => this.turnOffColor(color), 350)
+  }
+
+  turnOffColor(color){
+    this.colores[color].classList.remove('light')
   }
 }
 
