@@ -79,10 +79,10 @@ class Juego {
   }
 
   agregarEventoClick(){
-    this.colores.green.addEventListener('click', this.elegirColor.bind(this))
-    this.colores.red.addEventListener('click', this.elegirColor.bind(this))
-    this.colores.yellow.addEventListener('click', this.elegirColor.bind(this))
-    this.colores.blue.addEventListener('click', this.elegirColor.bind(this))
+    this.colores.green.addEventListener('click', this.elegirColor)
+    this.colores.red.addEventListener('click', this.elegirColor)
+    this.colores.yellow.addEventListener('click', this.elegirColor)
+    this.colores.blue.addEventListener('click', this.elegirColor)
   }
 
   eliminarEventosClick() {
