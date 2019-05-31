@@ -13,6 +13,8 @@ This game consist in the traditional game called "Simon Says". I built it follow
 - OOP (Objet-Oriented Programming)
 - and go on...
 
+I used [SweetAlert](https://cdnjs.com/libraries/sweetalert) to give a better appear when your change the level.
+
 Also you can play this game in your mobile just opening the link on it.
 
 # Enjoy it!
