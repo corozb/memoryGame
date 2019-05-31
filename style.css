@@ -1,0 +1,89 @@
+* {
+  font-family: Arial, Helvetica, sans-serif
+}
+
+h1 {
+  font-size: 40px;
+  color: white
+}
+
+body {
+  margin: 0;
+  background: url('./src/images/retro.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-position: center center; */
+  /* background-attachment: fixed; */
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.gameboard {
+  height: 100vh;
+  width: 100vh;
+  border-radius: 50%;
+  border: 10px solid black;
+  margin: 0 auto;
+  max-height: 77vh;
+  max-width: 77vh;
+  overflow: hidden;
+}
+
+.color {
+  width: 50%;
+  height: 50%;
+  /* border: 10px solid black; */
+  box-sizing: border-box;
+  float: left;
+}
+
+.green {
+  background: #00D853
+}
+
+.green.light {
+  background: rgb(79, 255, 146)
+}
+
+.red {
+  background: #FF0000
+}
+
+.red.light {
+  background: rgb(243, 46, 46)
+}
+
+.yellow {
+  background: #F6C600
+}
+
+.yellow.light {
+  background: rgb(255, 220, 78)
+}
+
+.blue {
+  background: #005CD0
+}
+
+.blue.light {
+  background: rgb(28, 127, 247)
+}
+
+.btn-start {
+  width: 400px;
+  height: 100px;
+  border-radius: 5px;
+  background: purple;
+  color: white;
+  font-size: 2.5em;
+  position: absolute;
+  top: calc(50% - 50px);
+  left: calc(50% - 200px);
+  cursor: pointer;
+  outline: none
+}
+
+.hide {
+  display: none
+}
