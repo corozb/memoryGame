@@ -28,6 +28,7 @@ body {
   max-height: 77vh;
   max-width: 77vh;
   overflow: hidden;
+  cursor: pointer
 }
 
 .color {

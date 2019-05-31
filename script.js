@@ -3,15 +3,17 @@ const red = document.getElementById('red')
 const yellow = document.getElementById('yellow')
 const blue = document.getElementById('blue')
 const btnEmpezar = document.getElementById('btnEmpezar')
+const LAST_LEVEL = 10
 
 class Juego {
   constructor() {
     this.inicializar()
     this.generarSecuencia()
-    this.nextLevel()
+    setTimeout(this.nextLevel, 500)
   }
 
   inicializar(){
+    this.nextLevel = this.nextLevel.bind(this)
     this.elegirColor = this.elegirColor.bind(this)
     btnEmpezar.classList.add('hide')
     this.level = 1
@@ -24,10 +26,11 @@ class Juego {
   }
 
   generarSecuencia() {
-    this.secuencia = new Array(10).fill(0).map(n => Math.floor(Math.random()*4))
+    this.secuencia = new Array(LAST_LEVEL).fill(0).map(n => Math.floor(Math.random()*4))
   }
 
   nextLevel(){
+    this.sublevel = 0
     this.brightSequence()
     this.agregarEventoClick()
   }
@@ -42,6 +45,19 @@ class Juego {
         return 'yellow'
       case 3:
         return 'blue'
+      }
+    }
+
+  changeColorToNumber(color) {
+    switch (color) {
+      case 'green':
+        return 0
+      case 'red':
+        return 1
+      case 'yellow':
+        return 2
+      case 'blue':
+        return 3
       }
     }
 
@@ -68,8 +84,33 @@ class Juego {
     this.colores.blue.addEventListener('click', this.elegirColor.bind(this))
   }
 
+  eliminarEventosClick() {
+    this.colores.green.removeEventListener('click', this.elegirColor.bind(this))
+    this.colores.red.removeEventListener('click', this.elegirColor.bind(this))
+    this.colores.yellow.removeEventListener('click', this.elegirColor.bind(this))
+    this.colores.blue.removeEventListener('click', this.elegirColor.bind(this))
+  }
+
   elegirColor(ev) {
-    console.log(this)
+    const colorName = ev.target.dataset.color
+    const colorNumber = this.changeColorToNumber(colorName)
+    this.turnOnColor(colorName)
+
+    if (colorNumber === this.secuencia[this.sublevel]) {
+      this.sublevel++
+      if (this.sublevel === this.level) {
+        this.level++
+        this.eliminarEventosClick()
+        if(this.level == (LAST_LEVEL+1)) {
+          // Ganó
+        } else {
+            // setTimeout(this.nextLevel.bind(this), 2000)
+            setTimeout(this.nextLevel, 1500)
+        }
+      }
+    } else {
+      // Perdió
+    }
   }
 
 }
