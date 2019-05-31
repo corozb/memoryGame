@@ -1,6 +1,6 @@
 # Memory Game
 
-This game consist in the traditional game called "Simon Says". I built follow Platzi course that help me to understand the **Fundamentals of Javascript**:
+This game consist in the traditional game called "Simon Says". I built it following Platzi course that help me to understand the **Fundamentals of Javascript**:
 - Variables
 - Conditions
 - Objects
