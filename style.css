@@ -51,7 +51,7 @@ body {
   max-height: 77vh;
   max-width: 77vh;
   cursor: pointer;
-  box-shadow: 0 0 40px  10px black
+  box-shadow: 0 0 40px  10px black;
 }
 
 .color {
@@ -93,6 +93,20 @@ body {
 }
 .blue.light {
   background: rgb(28, 127, 247)
+}
+
+.center {
+  height: 35vh;
+  width: 35vh;
+  border-radius: 50%;
+  border: 15px solid black;
+  background: red;
+  box-sizing: border-box;
+  position: absolute;
+  top: calc(50% - 17.5vh);
+  left: calc(50% - 17.5vh);
+  box-shadow: rgba(0, 0, 0, 0.315) 0px 0px 10px 10px, rgba(0, 0, 0, 0.315) 0px 0px 20px 20px inset;
+  box-shadow: 0 0 40px 5px black
 }
 
 /* Bordes */
@@ -142,7 +156,7 @@ body {
   display: none
 }
 
-.overlay {
+/* .overlay {
   background: black;
   position: absolute;
   left: 0;
@@ -152,8 +166,9 @@ body {
   align-items: center;
   justify-content: center;
   animation: darkOut .5s
-}
+} */
 
 .level {
   color: #89c739;
 }
+

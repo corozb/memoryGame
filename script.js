@@ -3,7 +3,10 @@ const red = document.getElementById('red')
 const yellow = document.getElementById('yellow')
 const blue = document.getElementById('blue')
 const btnEmpezar = document.getElementById('btnEmpezar')
+const level = document.getElementById('level')
 const LAST_LEVEL = 10
+
+console.log(level)
 
 class Juego {
   constructor() {
@@ -32,8 +35,11 @@ class Juego {
 
   nextLevel(){
     this.sublevel = 0
-    this.brightSequence()
-    this.agregarEventoClick()
+    setTimeout(() => {
+      level.innerHTML = this.level;  //Ésta línea permite imprimir el nivel en el background
+      this.brightSequence()
+      this.agregarEventoClick()},
+      1000)
   }
 
   changeNumberToColor(number) {
@@ -107,7 +113,7 @@ class Juego {
           this.youWon()
         } else {
             // setTimeout(this.nextLevel.bind(this), 2000)
-            setTimeout(this.nextLevel, 1500)
+            setTimeout(this.nextLevel, 1000)
         }
       }
     } else {
@@ -124,13 +130,15 @@ class Juego {
   youLost() {
     swal('Simon Says', 'PAY ATTENTION!!!, You Lost the Game', 'error')
       .then(() => {
-        this.eliminarEventosClick()
-        this.inicializar()
+        location.reload()
+        // this.eliminarEventosClick()
+        // this.inicializar()
       })
   }
 
 }
 
 function empezarJuego() {
+  
   window.juego = new Juego()
 }
