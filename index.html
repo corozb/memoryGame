@@ -8,21 +8,23 @@
   <title>Memory Game</title>
 </head>
 <body>
-  <!-- <section id="game-container" class="game-container notPlaying">
-    <div id="puntaje" class="puntaje">
+  <section id="game-container" class="game-container notPlaying">
+    <div id="score" class="score">
       <h1>Nivel: <span class="level">0</span></h1>
     </div>
-    <div class="simon"> -->
+    <div class="simon">
       <div class="gameboard">
-        <div id="green" class="color green left" data-color="green"></div>
-        <div id="red" class="color red right" data-color="red"></div>
-        <div id="yellow" class="color yellow left" data-color="yellow"></div>
-        <div id="blue" class="color blue right" data-color="blue"></div>
-        <button id="btnEmpezar" class="btn-start" onclick="empezarJuego()">PRESS START!</button>
+        <div id="center" class="center"></div>
+        <div id="green" class="color green left top" data-color="green"></div>
+        <div id="red" class="color red right top" data-color="red"></div>
+        <div id="yellow" class="color yellow left bottom" data-color="yellow"></div>
+        <div id="blue" class="color blue right bottom" data-color="blue"></div>
       </div>
-    <!-- </div>
+    </div>
     <div class="overlay"></div>
-  </section> -->
+  </section>
+  <button id="btnEmpezar" class="btn-start" onclick="empezarJuego()">PRESS START!</button>
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
   <script src="script.js"></script>
 </body>

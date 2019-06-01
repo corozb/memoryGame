@@ -14,21 +14,44 @@ body {
   background-repeat: no-repeat;
   /* background-position: center center; */
   /* background-attachment: fixed; */
-  display: flex;
+  /* display: flex;
   align-items: center;
+  height: 100vh; */
+}
+
+.simon {
+  margin: 0 auto;
+  position: relative;
+}
+
+.game-container {
+  display: flex;
   height: 100vh;
+}
+
+.score {
+  height: 100px;
+  width: 500px;
+  background: rgba(0,0,0,.9);
+  position: absolute;
+  text-align: center;
+  margin: 90px;
+  border-radius: 2em 15px;
 }
 
 .gameboard {
   height: 100vh;
   width: 100vh;
+  background: black;
   border-radius: 50%;
-  border: 10px solid black;
-  margin: 0 auto;
+  overflow: hidden;
+  /* margin: 0 auto; */
+  border: 15px solid black;
+  margin-top: calc(50vh - 50%);
   max-height: 77vh;
   max-width: 77vh;
-  overflow: hidden;
-  cursor: pointer
+  cursor: pointer;
+  box-shadow: 0 0 40px  10px black
 }
 
 .color {
@@ -39,38 +62,68 @@ body {
   float: left;
 }
 
+/* Colors */
 .green {
-  background: #00D853
+  background: #00D853;
+  border-radius: 25px
 }
-
 .green.light {
   background: rgb(79, 255, 146)
 }
 
 .red {
-  background: #FF0000
+  background: #FF0000;
+  border-radius: 25px
 }
-
 .red.light {
   background: rgb(243, 46, 46)
 }
 
 .yellow {
-  background: #F6C600
+  background: #F6C600;
+  border-radius: 25px
 }
-
 .yellow.light {
   background: rgb(255, 220, 78)
 }
 
 .blue {
-  background: #005CD0
+  background: #005CD0;
+  border-radius: 25px
 }
-
 .blue.light {
   background: rgb(28, 127, 247)
 }
 
+/* Bordes */
+.top {
+  border-bottom: 7.5px solid black
+}
+.bottom {
+  border-top: 7.5px solid black
+}
+.left {
+  border-right: 7.5px solid black;
+}
+.right {
+  border-left: 7.5px solid black;
+}
+
+/* shadows */
+.left.top {
+  box-shadow: rgba(0, 0, 0, 0.315) -5px -5px 10px 5px inset;
+}
+.left.bottom {
+  box-shadow: rgba(0, 0, 0, 0.315) -5px 5px 10px 5px inset;
+}
+.right.top {
+  box-shadow: rgba(0, 0, 0, 0.315) 5px -5px 10px 5px inset;
+}
+.right.bottom {
+  box-shadow: rgba(0, 0, 0, 0.315) 5px 5px 10px 5px inset;
+}
+
+/* Button */
 .btn-start {
   width: 400px;
   height: 100px;
@@ -87,4 +140,20 @@ body {
 
 .hide {
   display: none
+}
+
+.overlay {
+  background: black;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  animation: darkOut .5s
+}
+
+.level {
+  color: #89c739;
 }
