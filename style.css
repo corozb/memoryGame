@@ -3,8 +3,8 @@
 }
 
 h1 {
-  font-size: 40px;
-  color: white
+  font-size: 80px;
+  color: rgba(255, 255, 255, 0.4);
 }
 
 body {
@@ -30,13 +30,16 @@ body {
 }
 
 .score {
-  height: 100px;
-  width: 500px;
-  background: rgba(0,0,0,.9);
+  height: 70vh;
+  width: 70vh;
+  top: calc(50% - 35vh);
+  right: calc(50% - 94vh);
+  /* background: rgba(0,0,0,.9); */
   position: absolute;
   text-align: center;
-  margin: 90px;
-  border-radius: 2em 15px;
+  /* font-size: 50px; */
+  /* margin: 90px; */
+  /* border-radius: 2em 15px; */
 }
 
 .gameboard {
@@ -100,7 +103,9 @@ body {
   width: 35vh;
   border-radius: 50%;
   border: 15px solid black;
-  background: red;
+  background: url('./src/images/simon-txt.png') #000 center;
+  background-size: 100%;
+  background-repeat: no-repeat;
   box-sizing: border-box;
   position: absolute;
   top: calc(50% - 17.5vh);
@@ -139,8 +144,8 @@ body {
 
 /* Button */
 .btn-start {
-  width: 400px;
   height: 100px;
+  width: 400px;
   border-radius: 5px;
   background: purple;
   color: white;
@@ -156,19 +161,8 @@ body {
   display: none
 }
 
-/* .overlay {
-  background: black;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  align-items: center;
-  justify-content: center;
-  animation: darkOut .5s
-} */
-
 .level {
-  color: #89c739;
+  margin: 0;
+  font-size: 3em
 }
 
