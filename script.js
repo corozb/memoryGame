@@ -6,12 +6,40 @@ const btnEmpezar = document.getElementById('btnEmpezar')
 const level = document.getElementById('level')
 const LAST_LEVEL = 10
 
-console.log(level)
+
+// AUDIOS
+const audioLost = new Audio('./src/sounds/lost.mp3')
+let audioSprite = new Audio('./src/sounds/colorsAudioSprite.mp3')
+
+const audioTimes = {
+    yellow: {
+      start: 0,
+      length: 0.4
+  },
+  blue: {
+      start: 0.75,
+      length: 0.4
+  },
+  red: {
+      start: 1.45,
+      length: 0.4
+  },
+  green: {
+      start: 2.15,
+      length: 0.4
+  }
+}
+
+// current sprite being played
+let currentSprite = {}
+
+// --------------
 
 class Juego {
   constructor() {
     this.inicializar()
     this.generarSecuencia()
+    audioSprite.addEventListener('timeupdate', this.actualizarTiempo, false)
     setTimeout(this.nextLevel, 500)
   }
 
@@ -26,6 +54,12 @@ class Juego {
       red,
       yellow,
       blue
+    }
+  }
+
+  actualizarTiempo() {
+    if (this.currentTime >= currentSprite.start + currentSprite.length) {
+      this.pause()
     }
   }
 
@@ -71,13 +105,30 @@ class Juego {
   brightSequence() {
     for (let i = 0; i < this.level; i++){
       const color = this.changeNumberToColor(this.secuencia[i])
-      setTimeout(() => this.turnOnColor(color), 1000 * i)
+      setTimeout(() => {
+        this.turnOnColor(color)
+        this.playAudio(color)
+      }, 600 * i)
     }
   }
 
+  playAudio(id) {
+    if (audioTimes[id] && audioTimes[id].length) {
+      currentSprite = audioTimes[id]
+
+      audioSprite.currentTime = currentSprite.start
+      audioSprite.play()
+      setTimeout(() => {
+        if(!audioSprite.pause) {
+          audioSprite.pause()}
+        }, 500)
+      }
+    }
+  
+
   turnOnColor(color){
       this.colores[color].classList.add('light')
-      setTimeout(() => this.turnOffColor(color), 350)
+      setTimeout(() => this.turnOffColor(color), 250)
   }
 
   turnOffColor(color){
@@ -104,6 +155,7 @@ class Juego {
     this.turnOnColor(colorName)
 
     if (colorNumber === this.secuencia[this.sublevel]) {
+      this.playAudio(colorName)
       this.sublevel++
       if (this.sublevel === this.level) {
         this.level++
@@ -118,6 +170,7 @@ class Juego {
       }
     } else {
       // Perdió
+      audioLost.play()
       this.youLost()
     }
   }
@@ -139,6 +192,6 @@ class Juego {
 }
 
 function empezarJuego() {
-  
+
   window.juego = new Juego()
 }
