@@ -17,14 +17,7 @@ I used [SweetAlert](https://cdnjs.com/libraries/sweetalert) to give a better app
 
 Also you can play this game in your mobile just opening the link on it.
 
-# Enjoy it!
+# [Enjoy it!](https://corozb.github.io/memoryGame/)
 
-Imagenes, colores y sonido:
-https://github.com/pablojorgeandres/simonSays/blob/master/index.html
-https://pablojorgeandres.github.io/simonSays/
-
-Interfas, sombras y diseño
-https://github.com/matias4205/Platzi/blob/master/index.html
-https://matias4205.github.io/Platzi/
 
 
